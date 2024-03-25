@@ -1,0 +1,4 @@
+#nullable enable
+L0gg3r.LogSinks.Console.Base.IInteractiveConsole
+L0gg3r.LogSinks.Console.Base.IInteractiveConsole.Ask<TValue>(string! question, TValue? defaultValue = default(TValue?), System.Func<string!, TValue>? parser = null) -> TValue
+L0gg3r.LogSinks.Console.Base.IInteractiveConsole.Confirm(string! question, bool defaultValue = true) -> bool
