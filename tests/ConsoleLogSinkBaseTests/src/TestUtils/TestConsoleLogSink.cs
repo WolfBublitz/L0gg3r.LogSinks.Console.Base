@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using L0gg3r;
 using L0gg3r.LogSinks.Console.Base;
 
-internal sealed class TestConsoleLogSink : ConsoleLogSinkBase
+internal sealed class TestConsoleLogSink : ConsoleLogSinkBase<TestConsole>
 {
     public List<LogMessage> LogMessages { get; } = [];
 
@@ -16,7 +16,7 @@ internal sealed class TestConsoleLogSink : ConsoleLogSinkBase
     {
     }
 
-    protected override ValueTask WriteAsync(in LogMessage logMessage, IConsole console)
+    protected override ValueTask WriteAsync(in LogMessage logMessage, TestConsole console)
     {
         LogMessages.Add(logMessage);
 

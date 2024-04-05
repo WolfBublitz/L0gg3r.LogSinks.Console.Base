@@ -12,17 +12,19 @@ namespace L0gg3r.LogSinks.Console.Base;
 /// <summary>
 /// A base class for console log sinks.
 /// </summary>
-public abstract class ConsoleLogSinkBase : LogSinkBase
+/// <typeparam name="TConsole">The type of the console.</typeparam>
+public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase
+    where TConsole : IConsole
 {
     // ┌────────────────────────────────────────────────────────────────────────────────┐
     // │ Protected Constructors                                                         │
     // └────────────────────────────────────────────────────────────────────────────────┘
 
     /// <summary>
-    /// Initializes a new instance of the <see cref="ConsoleLogSinkBase"/> class.
+    /// Initializes a new instance of the <see cref="ConsoleLogSinkBase{TConsole}"/> class.
     /// </summary>
     /// <param name="console">The <see cref="IConsole"/> that shall be used for writing.</param>
-    protected ConsoleLogSinkBase(IConsole console)
+    protected ConsoleLogSinkBase(TConsole console)
     {
         ArgumentNullException.ThrowIfNull(console, nameof(console));
 
@@ -38,7 +40,7 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     /// <summary>
     /// Gets the <see cref="IConsole"/> that is used for writing.
     /// </summary>
-    public IConsole Console { get; }
+    public TConsole Console { get; }
 
     // ┌────────────────────────────────────────────────────────────────────────────────┐
     // │ Public Methods                                                                 │
@@ -189,7 +191,7 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     // └────────────────────────────────────────────────────────────────────────────────┘
 
     /// <inheritdoc/>
-    /// <seealso cref="WriteAsync(in LogMessage, IConsole)"/>
+    /// <seealso cref="WriteAsync(in LogMessage, TConsole)"/>
     protected sealed override ValueTask WriteAsync(in LogMessage logMessage)
     {
         return WriteAsync(logMessage, Console);
@@ -201,5 +203,5 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     /// <param name="logMessage">The <see cref="LogMessage"/> to write.</param>
     /// <param name="console">The <see cref="IConsole"/> that shall be used for writing.</param>
     /// <returns>A <see cref="ValueTask"/> that completes when the writing has finished.</returns>
-    protected abstract ValueTask WriteAsync(in LogMessage logMessage, IConsole console);
+    protected abstract ValueTask WriteAsync(in LogMessage logMessage, TConsole console);
 }

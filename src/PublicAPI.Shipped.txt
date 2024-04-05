@@ -1,7 +1,15 @@
 #nullable enable
+abstract L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.LogMessage logMessage, TConsole console) -> System.Threading.Tasks.ValueTask
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.AskAsync<TValue>(string! question) -> System.Threading.Tasks.Task<TValue>!
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.AskAsync<TValue>(string! question, System.Func<string!, TValue>! converter, TValue defaultAnswer) -> System.Threading.Tasks.Task<TValue>!
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.AskAsync<TValue>(string! question, TValue defaultAnswer) -> System.Threading.Tasks.Task<TValue>!
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.ConfirmAsync(string! question) -> System.Threading.Tasks.Task<bool>!
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.ConfirmAsync(string! question, bool defaultAnswer) -> System.Threading.Tasks.Task<bool>!
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.Console.get -> TConsole
+L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.ConsoleLogSinkBase(TConsole console) -> void
 L0gg3r.LogSinks.Console.Base.IConsole
 L0gg3r.LogSinks.Console.Base.IConsole.Ask<TValue>(string! question) -> TValue
-L0gg3r.LogSinks.Console.Base.IConsole.Ask<TValue>(string! question, System.Func<string!, TValue>! converter) -> TValue
 L0gg3r.LogSinks.Console.Base.IConsole.Ask<TValue>(string! question, System.Func<string!, TValue>! converter, TValue defaultAnswer) -> TValue
 L0gg3r.LogSinks.Console.Base.IConsole.Ask<TValue>(string! question, TValue defaultAnswer) -> TValue
 L0gg3r.LogSinks.Console.Base.IConsole.Confirm(string! question) -> bool
@@ -10,14 +18,4 @@ L0gg3r.LogSinks.Console.Base.IConsole.IsInteractive.get -> bool
 L0gg3r.LogSinks.Console.Base.IConsole.Write(string! message) -> void
 L0gg3r.LogSinks.Console.Base.IConsole.WriteLine() -> void
 L0gg3r.LogSinks.Console.Base.IConsole.WriteLine(string! message) -> void
-abstract L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.WriteAsync(in L0gg3r.LogMessage logMessage, L0gg3r.LogSinks.Console.Base.IConsole! console) -> System.Threading.Tasks.ValueTask
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.Ask<TValue>(string! question, System.Func<string!, TValue>! converter) -> System.Threading.Tasks.Task<TValue>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.AskAsync<TValue>(string! question) -> System.Threading.Tasks.Task<TValue>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.AskAsync<TValue>(string! question, System.Func<string!, TValue>! converter, TValue defaultAnswer) -> System.Threading.Tasks.Task<TValue>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.AskAsync<TValue>(string! question, TValue defaultAnswer) -> System.Threading.Tasks.Task<TValue>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.ConfirmAsync(string! question) -> System.Threading.Tasks.Task<bool>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.ConfirmAsync(string! question, bool defaultAnswer) -> System.Threading.Tasks.Task<bool>!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.Console.get -> L0gg3r.LogSinks.Console.Base.IConsole!
-L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.ConsoleLogSinkBase(L0gg3r.LogSinks.Console.Base.IConsole! console) -> void
-override sealed L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase.WriteAsync(in L0gg3r.LogMessage logMessage) -> System.Threading.Tasks.ValueTask
+override sealed L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.LogMessage logMessage) -> System.Threading.Tasks.ValueTask
