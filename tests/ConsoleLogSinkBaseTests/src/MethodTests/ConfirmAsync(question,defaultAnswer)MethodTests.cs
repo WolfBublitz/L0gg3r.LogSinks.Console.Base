@@ -14,6 +14,7 @@ public class TheConfirmAsyncMethod
 
         // Act
         Task task = testConsoleLogSink.ConfirmAsync("Are you sure?", true);
+        await Task.Delay(1000).ConfigureAwait(false);
         await testConsoleLogSink.SubmitAsync(new LogMessage());
         testConsoleLogSink.TestConsole.Input.Add(true);
         await task.ConfigureAwait(false);

@@ -14,6 +14,7 @@ public class TheAskAsyncMethod
 
         // Act
         Task task = testConsoleLogSink.AskAsync<int>("question");
+        await Task.Delay(1000).ConfigureAwait(false);
         await testConsoleLogSink.SubmitAsync(new LogMessage());
         testConsoleLogSink.TestConsole.Input.Add(42);
         await task.ConfigureAwait(false);
