@@ -60,7 +60,6 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     /// <returns>A <see cref="Task"/> delivering the answer as <typeparamref name="TValue"/>.</returns>
     /// <seealso cref="AskAsync{TValue}(string, TValue)"/>
     /// <seealso cref="AskAsync{TValue}(string, Func{string, TValue}, TValue)"/>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     public async Task<TValue> AskAsync<TValue>(string question)
     {
         await DisableAsync().ConfigureAwait(false);
@@ -89,7 +88,6 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     /// <returns>A <see cref="Task"/> delivering the answer as <typeparamref name="TValue"/>.</returns>
     /// <seealso cref="AskAsync{TValue}(string)"/>
     /// <seealso cref="AskAsync{TValue}(string, Func{string, TValue}, TValue)"/>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     public async Task<TValue> AskAsync<TValue>(string question, TValue defaultAnswer)
     {
         await DisableAsync().ConfigureAwait(false);
@@ -122,7 +120,6 @@ public abstract class ConsoleLogSinkBase : LogSinkBase
     /// <returns>A <see cref="Task"/> delivering the answer as <typeparamref name="TValue"/>.</returns>
     /// <seealso cref="AskAsync{TValue}(string)"/>
     /// <seealso cref="AskAsync{TValue}(string, TValue)"/>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     public async Task<TValue> AskAsync<TValue>(string question, Func<string, TValue> converter, TValue defaultAnswer)
     {
         await DisableAsync().ConfigureAwait(false);

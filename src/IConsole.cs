@@ -94,14 +94,13 @@ public interface IConsole
     /// <typeparam name="TValue">The expected <see cref="Type"/> of the answer.</typeparam>
     /// <param name="question">The question.</param>
     /// <returns>The answer as <typeparamref name="TValue"/>.</returns>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     /// <seealso cref="Ask{TValue}(string, Func{string, TValue}, TValue)"/>
     /// <seealso cref="Ask{TValue}(string, TValue)"/>
     TValue Ask<TValue>(string question)
     {
         static TValue Converter(string value) => (TValue)Convert.ChangeType(value, typeof(TValue), CultureInfo.InvariantCulture);
 
-        return Ask(question, Converter);
+        return Ask(question, Converter, defaultAnswer: default!);
     }
 
     /// <summary>
@@ -117,16 +116,15 @@ public interface IConsole
     /// </remarks>
     /// <typeparam name="TValue">The expected <see cref="Type"/> of the answer.</typeparam>
     /// <param name="question">The question.</param>
-    /// <param name="defaultAnswer">The default answere.</param>
+    /// <param name="defaultAnswer">The default answer.</param>
     /// <returns>The answer as <typeparamref name="TValue"/>.</returns>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     /// <seealso cref="Ask{TValue}(string, Func{string, TValue}, TValue)"/>
     /// <seealso cref="Ask{TValue}(string)"/>
     TValue Ask<TValue>(string question, TValue defaultAnswer)
     {
-        Func<string, TValue> converter = (string value) => (TValue)Convert.ChangeType(value, typeof(TValue), CultureInfo.InvariantCulture);
+        static TValue Converter(string value) => (TValue)Convert.ChangeType(value, typeof(TValue), CultureInfo.InvariantCulture);
 
-        return Ask(question, converter, defaultAnswer);
+        return Ask(question, Converter, defaultAnswer);
     }
 
     /// <summary>
@@ -150,6 +148,5 @@ public interface IConsole
     /// <returns>The answer as <typeparamref name="TValue"/>.</returns>
     /// <seealso cref="Ask{TValue}(string)"/>
     /// <seealso cref="Ask{TValue}(string, TValue)"/>
-    /// <seealso cref="Ask{TValue}(string, Func{string, TValue})"/>
     TValue Ask<TValue>(string question, Func<string, TValue> converter, TValue defaultAnswer);
 }
