@@ -5,6 +5,12 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L0gg3r.LogSinks.Console.Base", "src\L0gg3r.LogSinks.Console.Base.csproj", "{067A1C7F-3B84-4601-8784-EA0CC30E786B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{CC2D8429-FDF3-4958-BFF5-8BB291A1DF90}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ConsoleLogSinkBaseTests", "ConsoleLogSinkBaseTests", "{1F939022-DBE8-45BA-A3F7-07FE814C3272}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleLogSinkBaseTests", "tests\ConsoleLogSinkBaseTests\src\ConsoleLogSinkBaseTests.csproj", "{428248FE-FB49-44EC-953F-890B25CF41DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{067A1C7F-3B84-4601-8784-EA0CC30E786B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{067A1C7F-3B84-4601-8784-EA0CC30E786B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{067A1C7F-3B84-4601-8784-EA0CC30E786B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{428248FE-FB49-44EC-953F-890B25CF41DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{428248FE-FB49-44EC-953F-890B25CF41DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{428248FE-FB49-44EC-953F-890B25CF41DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{428248FE-FB49-44EC-953F-890B25CF41DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{1F939022-DBE8-45BA-A3F7-07FE814C3272} = {CC2D8429-FDF3-4958-BFF5-8BB291A1DF90}
+		{428248FE-FB49-44EC-953F-890B25CF41DF} = {1F939022-DBE8-45BA-A3F7-07FE814C3272}
 	EndGlobalSection
 EndGlobal
