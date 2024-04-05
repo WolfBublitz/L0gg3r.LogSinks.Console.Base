@@ -8,6 +8,7 @@
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <RestoreLockedMode Condition="Exists($(CI))">true</RestoreLockedMode>
     <ProjectsDir>$(ProjectDir)../../</ProjectsDir>
+    <RepositoryUrl>https://github.com/WolfBublitz/L0gg3r.LogSinks.Console.Base</RepositoryUrl>
   </PropertyGroup>
 
   <ItemGroup>
