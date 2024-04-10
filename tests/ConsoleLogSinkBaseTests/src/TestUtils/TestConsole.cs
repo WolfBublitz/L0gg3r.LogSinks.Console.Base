@@ -12,8 +12,6 @@ internal sealed class TestConsole : IConsole
 
     public StringBuilder Output { get; } = new();
 
-    public bool IsInteractive { get; set; }
-
     public TValue Ask<TValue>(string question, Func<string, TValue> converter, TValue defaultAnswer)
     {
         return (TValue)Input.Take();

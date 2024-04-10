@@ -21,7 +21,7 @@ public interface IConsole
     /// <summary>
     /// Gets a value indicating whether the console is interactive.
     /// </summary>
-    bool IsInteractive { get; }
+    bool IsInteractive => Environment.UserInteractive;
 
     // ┌────────────────────────────────────────────────────────────────────────────────┐
     // │ Public Methods                                                                 │
