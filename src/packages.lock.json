@@ -2,6 +2,12 @@
   "version": 1,
   "dependencies": {
     "net8.0": {
+      "L0gg3r": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0-preview.5",
+        "contentHash": "48x1hbjavhPqThr5q7q/yax4efnTqDvY54IBuFkzMl0Vc+u2/l4iWs1Hghq+hJSppd85oZBdyr54pRLpOkfx/A=="
+      },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
@@ -29,9 +35,6 @@
         "type": "Transitive",
         "resolved": "1.2.0.556",
         "contentHash": "zvn9Mqs/ox/83cpYPignI8hJEM2A93s2HkHs8HYMOAQW0PkampyoErAiIyKxgTLqbbad29HX/shv/6LGSjPJNQ=="
-      },
-      "l0gg3r": {
-        "type": "Project"
       }
     }
   }
