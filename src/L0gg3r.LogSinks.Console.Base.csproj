@@ -9,7 +9,7 @@
     <RestoreLockedMode Condition="Exists($(CI))">true</RestoreLockedMode>
     <ProjectsDir>$(ProjectDir)../../</ProjectsDir>
     <RepositoryUrl>https://github.com/WolfBublitz/L0gg3r.LogSinks.Console.Base</RepositoryUrl>
-    <Version>1.0.0-preview.3</Version>
+    <Version>1.0.0-preview.4</Version>
   </PropertyGroup>
 
   <ItemGroup>
