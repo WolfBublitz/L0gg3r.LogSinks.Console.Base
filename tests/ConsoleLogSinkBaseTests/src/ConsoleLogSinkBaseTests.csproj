@@ -16,6 +16,7 @@
     <CollectCoverage>true</CollectCoverage>
     <CoverletOutputFormat>lcov</CoverletOutputFormat>
     <CoverletOutput>lcov.info</CoverletOutput>
+    <Include>[L0gg3r.LogSinks.Console.Base]L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase*</Include>
   </PropertyGroup>
 
   <ItemGroup>
