@@ -5,8 +5,8 @@
       "L0gg3r": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.5",
-        "contentHash": "48x1hbjavhPqThr5q7q/yax4efnTqDvY54IBuFkzMl0Vc+u2/l4iWs1Hghq+hJSppd85oZBdyr54pRLpOkfx/A=="
+        "resolved": "1.0.0-preview.6",
+        "contentHash": "hgZ6F9cL26p95bnS7roJhY1JyhinsWl0QQl9yzMNMjd82CY6eeIKZT+w8CUTy03Q+uPtJltoXbxDRld1EE9/BQ=="
       },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
