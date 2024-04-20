@@ -1,5 +1,4 @@
 #nullable enable
-abstract L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.LogMessage logMessage, TConsole console) -> System.Threading.Tasks.ValueTask
 L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>
 L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.AskAsync<TValue>(string! question) -> System.Threading.Tasks.Task<TValue>!
 L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.AskAsync<TValue>(string! question, System.Func<string!, TValue>! converter, TValue defaultAnswer) -> System.Threading.Tasks.Task<TValue>!
@@ -18,4 +17,6 @@ L0gg3r.LogSinks.Console.Base.IConsole.IsInteractive.get -> bool
 L0gg3r.LogSinks.Console.Base.IConsole.Write(string! message) -> void
 L0gg3r.LogSinks.Console.Base.IConsole.WriteLine() -> void
 L0gg3r.LogSinks.Console.Base.IConsole.WriteLine(string! message) -> void
-override sealed L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.LogMessage logMessage) -> System.Threading.Tasks.ValueTask
+override L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.TryResolveInjectableProperty(System.Type! type, out object? value) -> bool
+override sealed L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.Base.LogMessage logMessage) -> System.Threading.Tasks.ValueTask
+abstract L0gg3r.LogSinks.Console.Base.ConsoleLogSinkBase<TConsole>.WriteAsync(in L0gg3r.Base.LogMessage logMessage, TConsole console) -> System.Threading.Tasks.ValueTask
