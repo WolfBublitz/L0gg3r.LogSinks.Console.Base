@@ -2,6 +2,12 @@
   "version": 1,
   "dependencies": {
     "net8.0": {
+      "L0gg3r.Base": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0-preview.6",
+        "contentHash": "YqhhOgCtJhJX2byAGGNzwYCk6g87GQTCmDCl5Sm2R/JCPc0PFvb6N0jY+M3BwcVaXA/eGuoGUR1tIFCzOBcgSw=="
+      },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
@@ -9,6 +15,15 @@
         "contentHash": "sieb6Ug+WYRoZjfV9MxwtPp5PwuSmmT3pHXuriR6pP9CTkNLYVa2aQK2qCt1b4HzdZPDIm8u4xJ3e1O9GYDRqg==",
         "dependencies": {
           "StyleCop.Analyzers": "1.2.0-beta.556"
+        }
+      },
+      "L0gg3r.LogSinks.Base": {
+        "type": "Direct",
+        "requested": "[1.*-*, 2.0.0)",
+        "resolved": "1.0.0",
+        "contentHash": "qD6eUl1RyAfeaprR1NyLFlE7QgflvLldmxEluC/S9Gk6N0t8dpsBu++EX6tj7ZaGKQMtYm815Vyu994/8NpDKw==",
+        "dependencies": {
+          "L0gg3r.Base": "[1.0.0-preview.11, 2.0.0)"
         }
       },
       "Microsoft.CodeAnalysis.PublicApiAnalyzers": {
@@ -29,15 +44,6 @@
         "type": "Transitive",
         "resolved": "1.2.0.556",
         "contentHash": "zvn9Mqs/ox/83cpYPignI8hJEM2A93s2HkHs8HYMOAQW0PkampyoErAiIyKxgTLqbbad29HX/shv/6LGSjPJNQ=="
-      },
-      "l0gg3r.base": {
-        "type": "Project"
-      },
-      "l0gg3r.logsinks.base": {
-        "type": "Project",
-        "dependencies": {
-          "L0gg3r.Base": "[1.0.0-preview.1, )"
-        }
       }
     }
   }
