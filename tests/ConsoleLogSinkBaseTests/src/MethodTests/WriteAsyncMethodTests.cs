@@ -12,7 +12,10 @@ public class TheWriteAsyncMethod
     {
         // Arrange
         Mock<ILogger> loggerMock = new();
-        TestConsoleLogSink testConsoleLogSink = new(loggerMock.Object);
+        TestConsoleLogSink testConsoleLogSink = new()
+        {
+            Logger = loggerMock.Object,
+        }; ;
 
         // Act
         await testConsoleLogSink.SubmitAsync(new LogMessage()).ConfigureAwait(false);

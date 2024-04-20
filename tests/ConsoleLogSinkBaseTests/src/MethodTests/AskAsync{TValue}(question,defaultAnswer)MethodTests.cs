@@ -12,7 +12,10 @@ public class TheAskAsyncMethod
     {
         // Arrange
         Mock<ILogger> loggerMock = new();
-        TestConsoleLogSink testConsoleLogSink = new(loggerMock.Object);
+        TestConsoleLogSink testConsoleLogSink = new()
+        {
+            Logger = loggerMock.Object,
+        }; ;
 
         // Act
         Task task = testConsoleLogSink.AskAsync("question", 0);
