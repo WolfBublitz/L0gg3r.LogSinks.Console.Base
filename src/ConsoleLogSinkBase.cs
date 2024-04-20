@@ -27,8 +27,7 @@ public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase<ConsoleLogSinkB
     /// Initializes a new instance of the <see cref="ConsoleLogSinkBase{TConsole}"/> class.
     /// </summary>
     /// <param name="console">The <see cref="IConsole"/> that shall be used for writing.</param>
-    protected ConsoleLogSinkBase(ILogger logger, TConsole console)
-        : base(logger)
+    protected ConsoleLogSinkBase(TConsole console)
     {
         ArgumentNullException.ThrowIfNull(console, nameof(console));
 
@@ -200,23 +199,23 @@ public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase<ConsoleLogSinkB
     }
 
     /// <inheritdoc/>
-    protected override bool TryResolveInjectableProperty(Type type, out object? instance)
+    protected override bool TryResolveInjectableProperty(Type type, out object? value)
     {
         if (type == typeof(TConsole))
         {
-            instance = Console;
+            value = Console;
 
             return true;
         }
         else if (type == typeof(ConsoleLogSinkBase<TConsole>))
         {
-            instance = this;
+            value = this;
 
             return true;
         }
         else
         {
-            return base.TryResolveInjectableProperty(type, out instance);
+            return base.TryResolveInjectableProperty(type, out value);
         }
     }
 
