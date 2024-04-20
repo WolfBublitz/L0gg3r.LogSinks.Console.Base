@@ -5,8 +5,8 @@
       "L0gg3r.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.6",
-        "contentHash": "YqhhOgCtJhJX2byAGGNzwYCk6g87GQTCmDCl5Sm2R/JCPc0PFvb6N0jY+M3BwcVaXA/eGuoGUR1tIFCzOBcgSw=="
+        "resolved": "1.0.0-preview.8",
+        "contentHash": "zMTnJpVzDuaHaCnBZ9ZzeHLOP2gDJHjtY8WG9o5uirB0nQSqZWyK5wf0Yrqmoy4Qkoj2aLSaounh7hNBvujyOw=="
       },
       "L0gg3r.CodeAnalyzer": {
         "type": "Direct",
@@ -20,10 +20,10 @@
       "L0gg3r.LogSinks.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.2",
-        "contentHash": "/8mJFbljg76XbmdCDtRhqjzeYrvGCXs+TfP0QZqR/eDSxBNTXqjlW8a46l8FWeyAqeTptICY/FVhrBRQx0IOzA==",
+        "resolved": "1.0.0-preview.3",
+        "contentHash": "jrklRokVX5tcE1DCVn9FiG2F6KVCXxOxGLhgO3qVUuiXrkXqwQ/bKot083RZ0NoC9JChn66pUKO6+CGABMzogA==",
         "dependencies": {
-          "L0gg3r.Base": "[1.0.0-preview.6, 2.0.0)"
+          "L0gg3r.Base": "[1.0.0-preview.8, 2.0.0)"
         }
       },
       "Microsoft.CodeAnalysis.PublicApiAnalyzers": {
