@@ -10,10 +10,10 @@ internal sealed class TestConsoleLogSink : ConsoleLogSinkBase<TestConsole>
 {
     public List<LogMessage> LogMessages { get; } = [];
 
-    public TestConsole TestConsole => (TestConsole)Console;
+    public TestConsole TestConsole => Console;
 
-    public TestConsoleLogSink(ILogger logger)
-        : base(logger, new TestConsole())
+    public TestConsoleLogSink()
+        : base(new TestConsole())
     {
     }
 
