@@ -194,9 +194,7 @@ public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase<ConsoleLogSinkB
     /// <inheritdoc/>
     /// <seealso cref="WriteAsync(in LogMessage, TConsole)"/>
     protected sealed override ValueTask WriteAsync(in LogMessage logMessage)
-    {
-        return WriteAsync(logMessage, Console);
-    }
+        => WriteAsync(logMessage, Console);
 
     /// <inheritdoc/>
     protected override bool TryResolveInjectableProperty(Type type, out object? value)
