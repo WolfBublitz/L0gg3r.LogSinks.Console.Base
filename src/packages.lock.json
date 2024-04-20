@@ -20,10 +20,10 @@
       "L0gg3r.LogSinks.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0",
-        "contentHash": "qD6eUl1RyAfeaprR1NyLFlE7QgflvLldmxEluC/S9Gk6N0t8dpsBu++EX6tj7ZaGKQMtYm815Vyu994/8NpDKw==",
+        "resolved": "1.0.0-preview.2",
+        "contentHash": "/8mJFbljg76XbmdCDtRhqjzeYrvGCXs+TfP0QZqR/eDSxBNTXqjlW8a46l8FWeyAqeTptICY/FVhrBRQx0IOzA==",
         "dependencies": {
-          "L0gg3r.Base": "[1.0.0-preview.11, 2.0.0)"
+          "L0gg3r.Base": "[1.0.0-preview.6, 2.0.0)"
         }
       },
       "Microsoft.CodeAnalysis.PublicApiAnalyzers": {
