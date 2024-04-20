@@ -3,6 +3,7 @@ namespace ConsoleLogSinkBaseTests;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using L0gg3r;
+using L0gg3r.Base;
 using L0gg3r.LogSinks.Console.Base;
 
 internal sealed class TestConsoleLogSink : ConsoleLogSinkBase<TestConsole>
@@ -11,8 +12,8 @@ internal sealed class TestConsoleLogSink : ConsoleLogSinkBase<TestConsole>
 
     public TestConsole TestConsole => (TestConsole)Console;
 
-    public TestConsoleLogSink()
-        : base(new TestConsole())
+    public TestConsoleLogSink(ILogger logger)
+        : base(logger, new TestConsole())
     {
     }
 

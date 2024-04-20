@@ -2,6 +2,7 @@ using System.Threading.Tasks;
 using BenchmarkDotNet.Attributes;
 using ConsoleLogSinkBaseTests;
 using L0gg3r;
+using L0gg3r.Base;
 
 namespace ConsoleLogSinkBaseBenchmarks
 {

@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using L0gg3r;
+using L0gg3r.Base;
 
 namespace ConsoleLogSinkBaseTests.MethodTests.AskAsync_TValue__question_MethodTests;
 
@@ -10,7 +11,8 @@ public class TheAskAsyncMethod
     public async Task ShouldDisableTheLogger()
     {
         // Arrange
-        TestConsoleLogSink testConsoleLogSink = new();
+        Mock<ILogger> loggerMock = new();
+        TestConsoleLogSink testConsoleLogSink = new(loggerMock.Object);
 
         // Act
         Task task = testConsoleLogSink.AskAsync<int>("question");

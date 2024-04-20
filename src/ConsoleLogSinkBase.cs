@@ -7,13 +7,16 @@
 using System;
 using System.Threading.Tasks;
 
+using L0gg3r.Base;
+using L0gg3r.LogSinks.Base;
+
 namespace L0gg3r.LogSinks.Console.Base;
 
 /// <summary>
 /// A base class for console log sinks.
 /// </summary>
 /// <typeparam name="TConsole">The type of the console.</typeparam>
-public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase
+public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase<ConsoleLogSinkBase<TConsole>>
     where TConsole : IConsole
 {
     // ┌────────────────────────────────────────────────────────────────────────────────┐
@@ -24,13 +27,12 @@ public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase
     /// Initializes a new instance of the <see cref="ConsoleLogSinkBase{TConsole}"/> class.
     /// </summary>
     /// <param name="console">The <see cref="IConsole"/> that shall be used for writing.</param>
-    protected ConsoleLogSinkBase(TConsole console)
+    protected ConsoleLogSinkBase(ILogger logger, TConsole console)
+        : base(logger)
     {
         ArgumentNullException.ThrowIfNull(console, nameof(console));
 
         Console = console;
-
-        ServiceProvider.RegisterServiceInstance<IConsole>(console);
     }
 
     // ┌────────────────────────────────────────────────────────────────────────────────┐
@@ -195,6 +197,27 @@ public abstract class ConsoleLogSinkBase<TConsole> : LogSinkBase
     protected sealed override ValueTask WriteAsync(in LogMessage logMessage)
     {
         return WriteAsync(logMessage, Console);
+    }
+
+    /// <inheritdoc/>
+    protected override bool TryResolveInjectableProperty(Type type, out object? instance)
+    {
+        if (type == typeof(TConsole))
+        {
+            instance = Console;
+
+            return true;
+        }
+        else if (type == typeof(ConsoleLogSinkBase<TConsole>))
+        {
+            instance = this;
+
+            return true;
+        }
+        else
+        {
+            return base.TryResolveInjectableProperty(type, out instance);
+        }
     }
 
     /// <summary>

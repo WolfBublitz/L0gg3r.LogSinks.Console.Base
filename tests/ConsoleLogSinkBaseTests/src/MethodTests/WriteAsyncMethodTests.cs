@@ -1,5 +1,6 @@
 using System.Threading.Tasks;
 using L0gg3r;
+using L0gg3r.Base;
 
 namespace ConsoleLogSinkBaseTests.MethodTests.WriteAsyncMethodTests;
 
@@ -10,13 +11,14 @@ public class TheWriteAsyncMethod
     public async Task ShouldBeCalledForEachLogMessage()
     {
         // Arrange
-        TestConsoleLogSink logSink = new();
+        Mock<ILogger> loggerMock = new();
+        TestConsoleLogSink testConsoleLogSink = new(loggerMock.Object);
 
         // Act
-        await logSink.SubmitAsync(new LogMessage()).ConfigureAwait(false);
-        await logSink.FlushAsync().ConfigureAwait(false);
+        await testConsoleLogSink.SubmitAsync(new LogMessage()).ConfigureAwait(false);
+        await testConsoleLogSink.FlushAsync().ConfigureAwait(false);
 
         // Assert
-        logSink.LogMessages.Should().HaveCount(1);
+        testConsoleLogSink.LogMessages.Should().HaveCount(1);
     }
 }
