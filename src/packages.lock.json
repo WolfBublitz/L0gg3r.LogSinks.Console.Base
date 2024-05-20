@@ -20,8 +20,8 @@
       "L0gg3r.LogSinks.Base": {
         "type": "Direct",
         "requested": "[1.*-*, 2.0.0)",
-        "resolved": "1.0.0-preview.6",
-        "contentHash": "q+uu8AydxetsdLAT9ZJWjf5++Auh968hIsmkMQPXzCDEl38eZpoh2J4Ei0zcBCTvClOHfTGP/5PteCKGrKjSKw==",
+        "resolved": "1.0.0-preview.7",
+        "contentHash": "hd1il+g177PL2g5BfEOh98toGXKACHCa5DcdaD9Fl6OZO2lQGBkIpzHjk1laNGEtEcySV5Mqi0mn98kFcE2S2A==",
         "dependencies": {
           "L0gg3r.Base": "[1.0.0-preview.11, 2.0.0)"
         }
