@@ -7,6 +7,7 @@ using L0gg3r.LogSinks.Console.Base;
 
 namespace ConsoleLogSinkBaseTests.InjectionTests;
 
+[LogMessageWriter<TestConsoleLogSink>]
 internal class LogMessageWriter : ILogMessageWriter<object>
 {
     [Inject]
